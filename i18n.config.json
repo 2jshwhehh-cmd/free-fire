@@ -1,0 +1,17 @@
+{
+  "fallbackLng": "en",
+  "languages": [
+    {
+      "code": "en",
+      "label": "English",
+      "detect": ["en", "en-US", "en-GB"],
+      "dir": "ltr"
+    },
+    {
+      "code": "ch-CN",
+      "label": "中文",
+      "detect": ["zh", "zh-CN", "zh-Hans", "ch", "ch-CN"],
+      "dir": "ltr"
+    }
+  ]
+}
