@@ -28,7 +28,9 @@ Price: Rs ${account.price}
 Product Link: ${url}`;
 
   const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+  const dealerNumber = account.dealerWhatsApp || WHATSAPP_NUMBER;
+
+const whatsappUrl = `https://wa.me/${dealerNumber}?text=${encodedMessage}`;
 
   const sizeClasses = {
     sm: 'px-4 py-2 text-sm gap-2',
