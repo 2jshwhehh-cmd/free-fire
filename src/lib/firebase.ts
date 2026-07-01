@@ -34,6 +34,7 @@ export interface Account {
   description: string;
   status: 'available' | 'sold';
   images: string[];
+  dealerWhatsApp: string;
 }
 
 // ── Database helpers ───────────────────────────────────────────────
