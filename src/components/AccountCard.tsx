@@ -19,7 +19,7 @@ export default function AccountCard({ account, index = 0 }: AccountCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: index * 0.07 }}
-      onClick={() => navigate(`/account/${account.id}`)}
+      onClick={() => navigate(`/account/${account.firebaseId}`)}
       className="account-card-hover group cursor-pointer rounded-2xl overflow-hidden border border-white/8 bg-card relative"
     >
       {/* Image */}
