@@ -4,13 +4,13 @@ import { getDatabase, ref, get, child } from 'firebase/database';
 // ⚠️  Replace these values with your Firebase project credentials.
 // Go to Firebase Console → Project Settings → Your apps → Config
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyASv3rNnCZ_GaQosPW4KoNXfhtbJ72k2xo",
+  authDomain: "free-fire-site-efcc3.firebaseapp.com",
+  databaseURL: "https://free-fire-site-efcc3-default-rtdb.firebaseio.com",
+  projectId: "free-fire-site-efcc3",
+  storageBucket: "free-fire-site-efcc3.firebasestorage.app",
+  messagingSenderId: "756939673076",
+  appId: "1:756939673076:web:a6d01589edf1f098ed3da1"
 };
 
 // Prevent duplicate app initialization
