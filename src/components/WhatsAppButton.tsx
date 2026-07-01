@@ -17,15 +17,7 @@ export default function WhatsAppButton({
 }: WhatsAppButtonProps) {
   const url = currentUrl || (typeof window !== 'undefined' ? window.location.href : '');
 
-  const message = `Hello ZALID Team,
-
-I want to buy this Free Fire account.
-
-Account ID: ${account.id}
-Level: ${account.level}
-Price: Rs ${account.price}
-
-Product Link: ${url}`;
+ const message = `Hello, I am interested in Free Fire ID ${account.id}`;
 
   const encodedMessage = encodeURIComponent(message);
   const dealerNumber = account.dealerWhatsApp || WHATSAPP_NUMBER;
