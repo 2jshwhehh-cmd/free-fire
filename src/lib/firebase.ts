@@ -19,6 +19,8 @@ export const db = getDatabase(app);
 
 // ── Types ──────────────────────────────────────────────────────────
 export interface Account {
+  firebaseId?: string;
+
   id: string;
   level: string;
   age: string;
@@ -37,20 +39,41 @@ export interface Account {
 // ── Database helpers ───────────────────────────────────────────────
 export const fetchAccounts = async (): Promise<Account[]> => {
   try {
+
     const dbRef = ref(db);
-    const snapshot = await get(child(dbRef, 'accounts'));
+
+    const snapshot = await get(
+      child(dbRef, 'accounts')
+    );
+
+
     if (snapshot.exists()) {
+
       const data = snapshot.val() as Record<string, Account>;
+
+
       return Object.keys(data).map((key) => ({
+
+        firebaseId: key,
+
         ...data[key],
-        id: data[key].id || key,
-        images: Array.isArray(data[key].images) ? data[key].images : [],
+
+        images: Array.isArray(data[key].images)
+          ? data[key].images
+          : [],
+
       }));
+
     }
+
+
     return [];
+
+
   } catch {
-    // Firebase not configured — caller should fall back to mock data
+
     return [];
+
   }
 };
 
@@ -60,11 +83,13 @@ export const fetchAccount = async (id: string): Promise<Account | null> => {
     const snapshot = await get(child(dbRef, `accounts/${id}`));
     if (snapshot.exists()) {
       const data = snapshot.val() as Account;
-      return {
-        ...data,
-        id: data.id || id,
-        images: Array.isArray(data.images) ? data.images : [],
-      };
+     return {
+  firebaseId: id,
+  ...data,
+  images: Array.isArray(data.images)
+    ? data.images
+    : [],
+};
     }
     return null;
   } catch {
